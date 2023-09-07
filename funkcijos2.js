@@ -11,15 +11,31 @@
 //8.1.2.5.years
 //8.2.Funkcija konvertuoja dienas į pasirinktą formatą ir grąžina atsakymą tokiu formatu: 5 days - 7200 minutes.
 
-function converter(days) {
+function converter(days, format) {
   let minutes = days * 24 * 60
   let hours = days * 24
   let weeks = days / 7
   let months = days / 30
   let years = days / 360
 
+  if (format === 'minutes') {
+    console.log(minutes)
+  }
+  else if (format === 'hours') {
+    console.log(hours)
+  }
+  else if (format === 'weeks') {
+    console.log(weeks)
+  }
+  else if (format === 'months') {
+    console.log(months)
+  }
+  else if (format === 'years') {
+    console.log(years)
+  }
+
 }
-converter(180)
+converter(180, 'weeks')
 
 
 //9. Funkciją, kuri patikrina ar skaičius dalinasi iš kito skaičiaus:
@@ -70,8 +86,8 @@ checkIfOdd('sveika')
 function getLetter(text, num) {
 
   let selectedLetter = text.charAt(num - 1)
-  let negativeNumber = text.charAt(text.length+num);
-  
+  let negativeNumber = text.charAt(text.length + num);
+
   if (text.length < num) {
     console.log(`Tekstas "${text}" turi 5 simbolius, o jūs nurodėte grąžinti "${num}.`)
   }
